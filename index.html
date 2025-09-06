@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motivational Zone</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(24,119,242,0.9), rgba(66,165,245,0.9)),
+                  url("https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+
+    header {
+      background: rgba(13, 71, 161, 0.9);
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 26px;
+      font-weight: bold;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+      z-index: 1000;
+      letter-spacing: 1px;
+    }
+
+    .slideshow-container {
+      position: relative;
+      margin-top: 100px;
+      width: 90%;
+      max-width: 900px;
+      height: 60vh;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .quote {
+      display: none;
+      font-size: 28px;
+      text-align: center;
+      padding: 20px;
+      line-height: 1.7;
+      color: #222;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .active {
+      display: block;
+      animation: fade 1ms;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: scale(0.95);}
+      to { opacity: 1; transform: scale(1);}
+    }
+
+    .actions {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .btn {
+      background: #1877f2;
+      color: lightpink;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: #0d47a1;
+    }
+
+    .nav-buttons {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+    }
+
+    .nav-buttons button {
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: lightpink;
+      font-size: 26px;
+      padding: 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .nav-buttons button:hover {
+      background: rgba(0,0,0,0.8);
+    }
+
+    .feedback {
+      margin-top: 15px;
+      width: 90%;
+      max-width: 800px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .comment-box {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-box input {
+      flex: 1;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .comment-box button {
+      padding: 8px 15px;
+      background: #42a5f5;
+      border: none;
+      color: lightpink;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .comment-box button:hover {
+      background: #0d47a1;
+    }
+
+    .comment {
+      background: #f1f1f1;
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>Welcome to the Motivational Zone</header>
+
+  <div class="slideshow-container">
+        <div class="quote">"Wish it, Plan it, Do it."</div>
+        <div class="quote">"Change the world by being yourself."</div>
+        <div class="quote">"Believe in yourself cause why not."</div>
+        <div class="quote">"Push yourself, because no one else is going to do it for you."</div>
+        <div class="quote">"If you can change your mind, you can change your life."</div>
+        <div class="quote">"The struggle you feel today creates the success you'll enjoy tomorrow."</div>
+        <div class="quote">"Everyday is a chance to learn."</div>
+        <div class="quote">"Never stop chasing your dreams. It will be worth it."</div>
+        <div class="quote">"Choose to be optimistic, it fells better."</div>
+        <div class="quote">"Do more of what makes you happy."</div>
+        <div class="quote">"Stay positive, better days are on their way."</div>
+        <div class="quote">"It is never too late to be what you might have been."</div>
+        <div class="quote">"Make at least one definite move daily toward your goal."</div>
+        <div class="quote">"Work hard dream big never give up."</div>
+        <div class="quote">"Never stop learning, because life never stops teaching."</div>
+        <div class="quote">"Nothing ever becomes real till it is experienced."</div>
+        <div class="quote">"The future belongs to those who believe in the beauty of their dreams."</div>
+        <div class="quote">"The highest result of education is tolerance."</div>
+        <div class="quote">"The mind is not a vessel to be filled, but a fire to be kindled."</div>
+        <div class="quote">"The power of education lies in its ability to transform lives."</div>
+        <div class="quote">"If you want to achieve greatness, stop asking for permission."</div>
+        <div class="quote">"Learn today, lead tomorrow."</div>
+        <div class="quote">"If you want to be powerful, educate yourself."</div>
+        <div class="quote">"If you don't know the think to do is not get scared, but to learn."</div>
+        <div class="quote">"The trick to having happy students is to first be happy yourself."</div>
+        <div class="quote">"Learning is never done without errors and defeat."</div>
+        <div class="quote">"Your talent and abilities will improve over time, but for that you have to start."</div>
+        <div class="quote">"There's no elavator to success, you have to take the stairs."</div>
+        <div class="quote">"Success consists of going from failure to failure without loss of enthusiasm."</div>
+        <div class="quote">"Just do your best."</div>
+        <div class="quote">"Coming together is beginning, keeping together is progress, working together is success."</div>
+        <div class="quote">"Never give up because great things take time."</div>
+        <div class="quote">"Knowledge is the key to success in life."</div>
+        <div class="quote">"Study now, shine later."</div>
+        <div class="quote">"Stay curious, keep learning, never stop growing."</div>
+        <div class="quote">"The roots of education are bitter, but the fruit is so sweet."</div>
+        <div class="quote">"Your hardwork will pay off."</div>
+        <div class="quote">"Don't stop until you're proud."</div>
+        <div class="quote">"Every expert was once a beginner."</div>
+        <div class="quote">"Education is the most powerful weapon you can use to change the world."</div>
+        </div>
+
+         <div class="actions">
+      <button onclick="plusSlides(-1)">⬅ Prev</button>
+      <button onclick="plusSlides(1)">Next ➡</button>
+    </div>
+
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+      <span class="dot" onclick="currentSlide(7)"></span>
+      <span class="dot" onclick="currentSlide(8)"></span>
+      <span class="dot" onclick="currentSlide(9)"></span>
+      <span class="dot" onclick="currentSlide(10)"></span>
+      <span class="dot" onclick="currentSlide(11)"></span>
+      <span class="dot" onclick="currentSlide(12)"></span>
+      <span class="dot" onclick="currentSlide(13)"></span>
+      <span class="dot" onclick="currentSlide(14)"></span>
+      <span class="dot" onclick="currentSlide(15)"></span>
+      <span class="dot" onclick="currentSlide(16)"></span>
+      <span class="dot" onclick="currentSlide(17)"></span>
+      <span class="dot" onclick="currentSlide(18)"></span>
+      <span class="dot" onclick="currentSlide(19)"></span>
+      <span class="dot" onclick="currentSlide(20)"></span>
+      <span class="dot" onclick="currentSlide(21)"></span>
+      <span class="dot" onclick="currentSlide(22)"></span>
+      <span class="dot" onclick="currentSlide(23)"></span>
+      <span class="dot" onclick="currentSlide(24)"></span>
+      <span class="dot" onclick="currentSlide(25)"></span>
+      <span class="dot" onclick="currentSlide(26)"></span>
+      <span class="dot" onclick="currentSlide(27)"></span>
+      <span class="dot" onclick="currentSlide(27)"></span>
+      <span class="dot" onclick="currentSlide(28)"></span>
+      <span class="dot" onclick="currentSlide(29)"></span>
+      <span class="dot" onclick="currentSlide(30)"></span>
+      <span class="dot" onclick="currentSlide(31)"></span>
+      <span class="dot" onclick="currentSlide(32)"></span>
+      <span class="dot" onclick="currentSlide(33)"></span>
+      <span class="dot" onclick="currentSlide(34)"></span>
+      <span class="dot" onclick="currentSlide(35)"></span>
+      <span class="dot" onclick="currentSlide(36)"></span>
+      <span class="dot" onclick="currentSlide(37)"></span>
+      <span class="dot" onclick="currentSlide(38)"></span>
+      <span class="dot" onclick="currentSlide(39)"></span>
+     <span class="dot" onclick="currentSlide(40)"></span>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="changeSlide(-1)">❮</button>
+    <button onclick="changeSlide(1)">❯</button>
+  </div>
+
+  <div class="actions">
+    <button class="btn like">👍 Like</button>
+    <button class="btn comment">💬 Comment</button>
+    <button class="btn share">📤 Share</button>
+  </div>
+
+  <div class="feedback" id="feedback" style="display:none;">
+    <div class="comment-box">
+      <input type="text" id="commentInput" placeholder="Write a comment...">
+      <button onclick="postComment()">Post</button>
+    </div>
+    <div id="commentsList"></div>
+  </div>
+
+  <!-- Comments Section -->
+  <div id="comments">
+    <div id="commentList"></div>
+    <div class="comment-box">
+      <input type="text" id="commentInput" placeholder="Write a comment...">
+      <button onclick="addComment()">Post</button>
+    </div>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    let slides = document.querySelectorAll(".quote");
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === index) slide.classList.add("active");
+      });
+    }
+
+    function changeSlide(n) {
+      slideIndex += n;
+      if (slideIndex >= slides.length) slideIndex = 0;
+      if (slideIndex < 0) slideIndex = slides.length - 1;
+      showSlide(slideIndex);
+    }
+
+    function likeQuote() {
+      likeCount++;
+      document.getElementById("likeCount").textContent = likeCount;
+    }
+
+    function toggleComment() {
+      let feedback = document.getElementById("feedback");
+      feedback.style.display = (feedback.style.display === "none") ? "block" : "none";
+    }
+
+    function postComment() {
+      let input = document.getElementById("commentInput");
+      let text = input.value.trim();
+      if (text !== "") {
+        let commentDiv = document.createElement("div");
+        commentDiv.classList.add("comment");
+        commentDiv.textContent = text;
+        document.getElementById("commentsList").appendChild(commentDiv);
+        input.value = "";
+      }
+    }
+
+    function shareQuote() {
+      let currentQuote = slides[slideIndex].innerText;
+      navigator.clipboard.writeText(currentQuote).then(() => {
+        alert("Quote copied! Share it with your friends 🚀");
+      });
+    }
+
+    // Auto slide every 5 seconds
+    setInterval(() => {
+      changeSlide(1);
+    }, 5000);
+
+    // Initialize
+    showSlide(slideIndex);
+  </script>
+</body>
+</html>
